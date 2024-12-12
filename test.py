@@ -23,12 +23,13 @@ def is_prime(number):
         if number == 1 or number == 2 or number == 3:
             return True
         elif number > 3:
-            for i in range(2, int(number // 2) + 1):
+            for i in range(2, int(number ** 0.5) + 1):
                 if number % i == 0:
-                    return False
+                    break
+                return False
         return True
     else:
         return ValueError
 if __name__ == "__main__":
     print(fibonacci(n))
-    print(is_prime(27))
+    print(is_prime(5))
