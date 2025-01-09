@@ -21,7 +21,8 @@ n = 20
 def is_prime(number):
     if not isinstance(number, int) or number < 0:
         raise ValueError("Input must be a non-negative integer.")
-    
+    if number == 0:
+     return ValueError
     if number < 2:
         return False
     if number == 2:
@@ -35,7 +36,9 @@ def is_prime(number):
 def primes_in_range(a, b):
     primes = []
     if not isinstance(a, int) or not isinstance(b, int) or a < 0 or b < 0:
-        raise ValueError
+        raise ValueError("Inputs must be non-negative integers.")
+    if a > b:
+        a, b = b, a
     for num in range(a, b + 1):
         if is_prime(num):
             primes.append(num)
@@ -44,4 +47,4 @@ def primes_in_range(a, b):
 if __name__ == "__main__":
     print(fibonacci(n))
     print(is_prime(6))
-    print(primes_in_range(1, 20))
+    print(primes_in_range(20, 1))
