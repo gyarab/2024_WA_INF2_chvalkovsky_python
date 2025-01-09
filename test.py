@@ -44,7 +44,12 @@ def primes_in_range(a, b):
             primes.append(num)
     return primes
 
+def split_intro_threes(text):
+    if not isinstance(text, str):
+        raise ValueError
+    return [text[i:i+3] for i in range(0, len(text), 3)]
 if __name__ == "__main__":
     print(fibonacci(n))
     print(is_prime(6))
     print(primes_in_range(20, 1))
+    print(split_intro_threes("abcde fgh"))
