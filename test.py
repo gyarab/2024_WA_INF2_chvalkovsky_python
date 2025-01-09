@@ -19,17 +19,19 @@ def fibonacci(n):
 n = 20
 
 def is_prime(number):
-    if isinstance(number, int) and number >= 0:
-        if number == 1 or number == 2 or number == 3:
-            return True
-        elif number > 3:
-            for i in range(2, int(number ** 0.5) + 1):
-                if number % i == 0:
-                    break
-                return False
+    if not isinstance(number, int) or number < 0:
+        raise ValueError("Input must be a non-negative integer.")
+    
+    if number < 2:
+        return False
+    if number == 2:
         return True
-    else:
-        return ValueError
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            return False
+    
+    return True
+
 if __name__ == "__main__":
     print(fibonacci(n))
-    print(is_prime(5))
+    print(is_prime(6))
