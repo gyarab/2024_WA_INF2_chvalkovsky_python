@@ -32,6 +32,19 @@ def is_prime(number):
     
     return True
 
+def primes_in_range(a, b):
+    primes = []
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise ValueError
+    for num in range(a, b + 1):
+        if is_prime(num):
+            primes.append(num)
+    return primes
+
+
+    
+
 if __name__ == "__main__":
     print(fibonacci(n))
     print(is_prime(6))
+    print(primes_in_range(1, 20))
