@@ -1,5 +1,6 @@
 .venv
 db.sqplite3
+.DS_Store
 
 # Python cache files
 __pycache__/
