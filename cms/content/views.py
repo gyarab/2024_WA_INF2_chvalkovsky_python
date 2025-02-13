@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 import requests
+import json
 
 # data = [
 #     {
@@ -15,28 +16,22 @@ import requests
 # ]
 
 def homepage(request):
-    ret = '''
-    <!DOCTYPE html>
-    <html>
-    <head></head>
-    <body>
-    <ul>
-    '''
+    with open('articles.json', encoding='utf-8') as f:
+        articles = json.load(f)
 
-    url = 'https://kf-ga.github.io/_downloads/55747ce1b3aa6fea6b8a71e2b55912de/articles.json'
-    res = requests.get(url)
-    res.raise_for_status()
-    data = res.json()
 
-    for i in data:
-        ret += f"""
-        <li>
-            {i['category']} <a href="{i['link']}">
-                {i['title']}
-            </a><br>
-            <img src="{i['image']}">
-            <p>{i['perex']}</p>
-        </li>"""
+    return render(request, 'content/homepage.html', {'articles': articles})
 
-    ret += "</ul></body></html>"
-    return HttpResponse(ret)
+def article(request, id):
+    with open('articles.json', encoding='utf-8') as f:
+        articles = json.load(f)
+    
+    article = articles[id]
+
+    return render(request, 'content/article.html', {'article' : article})
+
+def hello(request, name):
+    return HttpResponse(f'Ahoj {name}')
+
+def vynasob(request, a, b):
+    return HttpResponse(f'{a} * {b} = {a*b}')
