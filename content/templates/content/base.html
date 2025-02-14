@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Guitars{% endblock %}</title>
+
+    {% if page == 'homepage' %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    {% elif page == 'details' %}
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    {% endif %}
+
     {% block header %}<h1> </h1>{% endblock %}
 </head>
 <body>
     {% block main %}{% endblock %}
 </body>
 </html>
+{% block footer %}
+<footer>
+</footer>
+{% endblock %}

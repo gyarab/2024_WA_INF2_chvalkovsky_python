@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-import requests
 import json
 
 def homepage(request):
@@ -9,7 +7,7 @@ def homepage(request):
         guitars = json.load(f)
 
 
-    return render(request, 'content/homepage.html', {'guitars': guitars})
+    return render(request, 'content/homepage.html', {'guitars': guitars, 'page': 'homepage'})
 
 def details(request, id):
     with open('guitars.json', encoding='utf-8') as f:
@@ -17,4 +15,5 @@ def details(request, id):
     
     guitar = guitars[id]
 
-    return render(request, 'content/details.html', {'guitar' : guitar})
+    return render(request, 'content/details.html', {'guitar' : guitar, 'page': 'details'})
+

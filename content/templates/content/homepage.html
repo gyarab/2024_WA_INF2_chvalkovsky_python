@@ -4,8 +4,23 @@
     <h1>All guitars</h1>
 {% endblock %}
 {% block main %}
+<div class="homepage">
     {% for guitar in guitars %}
-        <a href="/details/{{forloop.counter0}}"><h2>{{ guitar.brand }} {{ guitar.model }}</h2></a>
-        <p>{{ guitar.price }}</p>
+    <script>
+        function redirect() {
+            window.location.href = "/details/{{ forloop.counter0 }}";
+        }
+    </script>
+    <div class="guitar-preview" onclick= "redirect()">
+        <h2>{{ guitar.brand }} {{ guitar.model }}</h2>
+        <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
+        <div class="guitar-price">
+            <p>{{ guitar.price }}</p>
+        </div>
+    </div>
     {% endfor %}
+</div>
+{% endblock %}
+{% block footer %}
+<a href="https://kytary.cz/">Source</a>
 {% endblock %}
