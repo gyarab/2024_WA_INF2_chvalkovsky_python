@@ -22,9 +22,5 @@ import content.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', content.views.homepage),
-    path('article/<int:id>/', content.views.article),
-
-    path('hello/<str:name>/', content.views.hello),
-    path('vynasob/<int:a>/<int:b>', content.views.vynasob),
-
+    path('details/<int:id>/', content.views.details),
 ]

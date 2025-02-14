@@ -1,11 +1,10 @@
 {% extends "content/base.html" %}
 
 {% block header %}
-    {{article.title}}
+    <h1>{{guitar.brand}} {{guitar.model}}</h1>
 {% endblock %}
 {% block main %}
-    {{article.title}}
-        <img src="{{article.image}}" alt="{{article.title}}">
+        <img src="{{guitar.image}}" alt="{{guitar.model}}">
         <style>
             img {
                 margin-bottom: 1rem;
@@ -14,6 +13,7 @@
                 text-decoration: underline;
             }
         </style>
-        <p>{{article.perex}}</p>
+        <h2>{{guitar.price}}</h2>
+        <p>{{guitar.description}}</p>
         <a href="/">Zpět na úvodní stránku</a>
 {% endblock %}

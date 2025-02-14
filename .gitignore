@@ -1,11 +1,42 @@
+# Virtual environments
 .venv
+
+# Database files
 db.sqplite3
+
+# macOS files
 .DS_Store
 
-# Python cache files
-__pycache__/
+# IDE files
+.vscode
 
-# Python distribution / packaging
+# Python files
+__pycache__/
+*.py,cover
+*.egg-info/
+
+# Distribution files
 dist/
 build/
-*.egg-info/
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
+
+# Log files
+*.log
+
+# Coverage files
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Testing and linting
+.tox/
+.nox/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
