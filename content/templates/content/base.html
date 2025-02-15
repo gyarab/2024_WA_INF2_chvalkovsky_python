@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Guitars{% endblock %}</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     {% if page == 'homepage' %}
     <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
     {% elif page == 'details' %}
     <link rel="stylesheet" href="{% static 'css/details.css' %}">
     {% endif %}
-
-    {% block header %}<h1> </h1>{% endblock %}
 </head>
 <body>
-    {% block main %}{% endblock %}
+    <header> 
+        <div class="admin-button button" onclick="admin()"> Admin </div>
+        <script>
+            function admin() {
+                window.location.href = "/admin";
+            }
+        </script>
+        {% block header %}
+        {% endblock %}
+    </header>
+    <main>
+        {% block main %}
+        {% endblock %}
+    <main>
+    <footer>
+        <a href="https://kytary.cz/">Source</a>
+    </footer>
 </body>
 </html>
-{% block footer %}
-<footer>
-</footer>
-{% endblock %}
