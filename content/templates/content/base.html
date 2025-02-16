@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     {% if page == 'homepage' %}
-    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+        <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
     {% elif page == 'details' %}
-    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+        <link rel="stylesheet" href="{% static 'css/details.css' %}">
     {% endif %}
 </head>
 <body>
@@ -29,9 +29,11 @@
     <main>
         {% block main %}
         {% endblock %}
-    <main>
+    </main>
     <footer>
-        <a href="https://kytary.cz/">Source</a>
+        <a href="https://kytary.cz/" target="_blank" rel="noopener noreferrer">Source</a>
+        {% block footer %}
+        {% endblock %}
     </footer>
 </body>
 </html>

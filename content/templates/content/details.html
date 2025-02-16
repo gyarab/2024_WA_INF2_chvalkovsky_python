@@ -3,17 +3,31 @@
 {% block header %}
     <h1>{{guitar.brand}} {{guitar.model}}</h1>
 {% endblock %}
+
 {% block main %}
+<div class="details">
+    <div class="guitar-image">
         <img src="{{guitar.image}}" alt="{{guitar.model}}">
-        <style>
-            img {
-                margin-bottom: 1rem;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-        </style>
-        <h2>{{guitar.price}}</h2>
-        <p>{{guitar.description}}</p>
-        <a href="/">Zpět na úvodní stránku</a>
+    </div>
+    <div class="guitar-description">
+        <h3> Shape: {{guitar.shape}} </h3>
+        <h3> Pickups: {{guitar.pickups}} </h3>
+        <div class="guitar-price">
+            <p>{{guitar.price}}</p>
+        </div>
+        <h3> Description: </h3>
+        <p class="description">{{guitar.description}}</p>
+    </div>
+</div>
+<script>
+    function redirect() {
+        window.location.href = "/";
+    }
+    document.querySelector(".guitar-image").onclick = function () {
+        this.classList.toggle("large");
+    };
+</script>
+{% endblock %}
+{% block footer %}
+    <div class="homepage-button button" onclick= "redirect()">Home</div>
 {% endblock %}
