@@ -5,7 +5,8 @@ Django cms repozitář
 brunochvalk
 # Obsah
 Projekt obsahuje databázi elektrických kytar
-# How to run
+
+# How to run:
 1. Clone the repository:
     ```sh
     git clone https://github.com/brunochvalk/2024_WA_INF2_chvalkovsky_python.git
