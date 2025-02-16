@@ -2,7 +2,7 @@
 .venv
 
 # Database files
-db.sqplite3
+db.sqlite3
 
 # macOS files
 .DS_Store
