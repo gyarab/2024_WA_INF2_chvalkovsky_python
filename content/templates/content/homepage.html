@@ -2,11 +2,22 @@
 
 {% block header %}
     <h1>All guitars</h1> 
+<!--
+    <div class="filter-menu">
+        <label for="brand-filter">Filter by brand:</label>
+        <select id="brand-filter" name="brand" onchange="filterGuitars()">
+            <option value="">All</option>
+            {% for guitar in guitars %}
+                <option value="{{ guitar.brand }}">{{ guitar.brand }}</option>
+            {% endfor %}
+        </select>
+    </div>
+-->
 {% endblock %}
 {% block main %}
 <div class="homepage">
     {% for guitar in guitars %}
-    <div class="guitar-preview" onclick= "redirect({{forloop.counter0}})">
+    <div class="guitar-preview" onclick= "redirect({{ guitar.id }})">
         <h2>{{ guitar.brand }} {{ guitar.model }}</h2>
         <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
         <div class="guitar-price">
@@ -16,6 +27,12 @@
     {% endfor %}
 </div>
 <script>
+    /**
+    function filterGuitars() {
+        var brand = document.getElementById("brand-filter").value;
+        window.location.href = "/?brand=" + brand;
+    }
+    **/
     function redirect(id) {
         window.location.href = "/details/" + id;
     }
