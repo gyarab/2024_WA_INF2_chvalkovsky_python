@@ -4,24 +4,24 @@
     <h1>All guitars</h1> 
 
     <div class="filter-menu">
-        <label for="brand-filter">Filter by brand:</label>
-        <select id="brand-filter" name="brand" onchange="filterGuitars(this.value)">
+        <label class="filter-label" for="brand-filter">Filter by brand:</label>
+        <select class="filter" id="brand-filter" name="brand" onchange="filterGuitars(this.value)">
             <option value="">All</option>
             {% for brand in brands %}
                 <option value="{{ brand }}">{{ brand }}</option>
             {% endfor %}
         </select>
 
-        <label for="pickup-filter">Filter by pickup configuration:</label>
-        <select id="pickup-filter" name="pickup" onchange="filterGuitars(this.value)">
+        <label class="filter-label" for="pickup-filter">Filter by pickup configuration:</label>
+        <select class="filter" id="pickup-filter" name="pickup" onchange="filterGuitars(this.value)">
             <option value="">All</option>
             {% for pickup in pickups %}
                 <option value="{{ pickup }}">{{ pickup }}</option>
             {% endfor %}
         </select>
 
-        <label for="shape-filter" >Filter by shape:</label>
-        <select id="shape-filter" name="shape" onchange="filterGuitars(this.value)">
+        <label class="filter-label" for="shape-filter" >Filter by shape:</label>
+        <select class="filter" id="shape-filter" name="shape" onchange="filterGuitars(this.value)">
             <option value="">All</option>
             {% for shape in shapes %}
                 <option value="{{ shape }}">{{ shape }}</option>

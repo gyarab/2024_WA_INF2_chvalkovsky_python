@@ -11,15 +11,55 @@
   grid-gap: 5rem;
 }
 .filter-menu {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  gap: 15px;
   justify-content: center;
-  align-items: space-between;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
+  max-width: 800px;
+  position: relative;
 }
+
+.filter-label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
 .filter {
-  margin: 3rem;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  appearance: none; /* Removes default OS styles (Mac 3D effect) */
+  -webkit-appearance: none; /* Safari */
+  -moz-appearance: none; /* Firefox */
+  text-align: center;
 }
+
+.filter:hover,
+.filter:focus {
+  border-color: black;
+  outline: none;
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+.filter::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 .guitar-preview {
   justify-content: center;
   align-items: center;
