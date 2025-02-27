@@ -37,7 +37,11 @@ Projekt obsahuje databázi elektrických kytar
     ```sh
     python manage.py migrate
     ```
-7. Run the development server:
+7. Load data from fixture
+    ```sh
+    python manage.py loaddata guitars.json
+    ```
+8. Run the development server:
     ```sh
     python manage.py runserver
     ```
