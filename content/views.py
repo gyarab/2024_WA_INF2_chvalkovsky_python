@@ -19,10 +19,22 @@ def details(request, id):
 
     return render(request, 'content/details.html', {'guitar' : guitar, 'page': 'details'})
 """
+
 # Database Code
 def homepage(request):
     guitars = Guitar.objects.all()
-    return render(request, 'content/homepage.html', {'guitars': guitars, 'page': 'homepage'})
+    brands = Guitar.objects.values_list('brand', flat=True).distinct()
+    pickups = Guitar.objects.values_list('pickups', flat=True).distinct()
+    shapes = Guitar.objects.values_list('shape', flat=True).distinct()
+
+    return render(request, 'content/homepage.html', 
+        {
+        'page': 'homepage', 
+        'guitars': guitars, 
+        'brands': brands,
+        'pickups' : pickups,
+        'shapes' : shapes,
+         })
 
 def details(request, id):
     guitar = get_object_or_404(Guitar, id=id)

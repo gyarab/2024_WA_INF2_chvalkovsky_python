@@ -2,41 +2,100 @@
 
 {% block header %}
     <h1>All guitars</h1> 
-<!--
+
     <div class="filter-menu">
         <label for="brand-filter">Filter by brand:</label>
-        <select id="brand-filter" name="brand" onchange="filterGuitars()">
+        <select id="brand-filter" name="brand" onchange="filterGuitars(this.value)">
             <option value="">All</option>
-            {% for guitar in guitars %}
-                <option value="{{ guitar.brand }}">{{ guitar.brand }}</option>
+            {% for brand in brands %}
+                <option value="{{ brand }}">{{ brand }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="pickup-filter">Filter by pickup configuration:</label>
+        <select id="pickup-filter" name="pickup" onchange="filterGuitars(this.value)">
+            <option value="">All</option>
+            {% for pickup in pickups %}
+                <option value="{{ pickup }}">{{ pickup }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="shape-filter" >Filter by shape:</label>
+        <select id="shape-filter" name="shape" onchange="filterGuitars(this.value)">
+            <option value="">All</option>
+            {% for shape in shapes %}
+                <option value="{{ shape }}">{{ shape }}</option>
             {% endfor %}
         </select>
     </div>
--->
+
 {% endblock %}
 {% block main %}
 <div class="homepage">
     {% for guitar in guitars %}
-    <div class="guitar-preview" onclick= "redirect({{ guitar.id }})">
+    <div
+    class="guitar-preview"
+    onclick= "redirect({{ guitar.id }})" 
+    data-brand="{{ guitar.brand }}" 
+    data-pickup="{{ guitar.pickups }}" 
+    data-shape="{{ guitar.shape }}"
+    >
         <h2>{{ guitar.brand }} {{ guitar.model }}</h2>
         <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
         <div class="guitar-price">
-            <p>{{ guitar.price }}</p>
+            <p>{{ guitar.price }},-</p>
         </div>
     </div>
     {% endfor %}
+    <div class="not-found" style="display: none;">
+        <h2>No guitars found</h2>
+        <div class="reset-button button" onclick="location.reload()"> Remove all filters </div>
+    </div>
 </div>
+
+
 <script>
-    /**
     function filterGuitars() {
-        var brand = document.getElementById("brand-filter").value;
-        window.location.href = "/?brand=" + brand;
+        var brandFilter = document.getElementById("brand-filter").value;
+        var pickupFilter = document.getElementById("pickup-filter").value;
+        var shapeFilter = document.getElementById("shape-filter").value;
+    
+        var guitars = document.querySelectorAll(".guitar-preview");
+        var visibleGuitarCount = 0;
+    
+        guitars.forEach(function (guitar) {
+            var brand = guitar.getAttribute("data-brand");
+            var pickup = guitar.getAttribute("data-pickup");
+            var shape = guitar.getAttribute("data-shape");
+    
+            var matchesBrand = brandFilter === "" || brand === brandFilter;
+            var matchesPickup = pickupFilter === "" || pickup === pickupFilter;
+            var matchesShape = shapeFilter === "" || shape === shapeFilter;
+    
+            if (matchesBrand && matchesPickup && matchesShape) {
+                guitar.style.display = "block";
+                visibleGuitarCount++;
+            } else {
+                guitar.style.display = "none";
+            }
+        });
+    
+        notFound(visibleGuitarCount);
     }
-    **/
+    
+    function notFound(visibleCount) {
+        var notFound = document.querySelector(".not-found");
+        if (visibleCount === 0) {
+            notFound.style.display = "block";
+        } else {
+            notFound.style.display = "none";
+        }
+    }
     function redirect(id) {
         window.location.href = "/details/" + id;
     }
+    
 </script>
-{% endblock %}
-{% block footer %}
+    {% endblock %}
+    {% block footer %}
 {% endblock %}

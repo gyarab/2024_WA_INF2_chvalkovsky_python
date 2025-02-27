@@ -10,6 +10,16 @@
   grid-template-rows: repeat(10, auto);
   grid-gap: 5rem;
 }
+.filter-menu {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  margin: 0 auto;
+  padding: 20px;
+}
+.filter {
+  margin: 3rem;
+}
 .guitar-preview {
   justify-content: center;
   align-items: center;
@@ -32,4 +42,35 @@
   width: auto;
   object-fit: cover;
   border-radius: 10px;
+}
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+
+  margin: auto; /* Center inside the parent */
+  position: absolute; /* Allow positioning */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Adjust to exact center */
+
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 3rem;
+  width: 40%;
+  height: auto; /* Allow natural height */
+}
+
+  .reset-button {
+    width: max-content;
+    padding: 12px 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 0 auto;
+    cursor: pointer;
 }
