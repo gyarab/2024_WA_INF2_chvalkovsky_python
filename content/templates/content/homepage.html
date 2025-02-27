@@ -1,7 +1,7 @@
 {% extends "content/base.html" %}
 
 {% block header %}
-    <h1>All guitars</h1> 
+    <h1>Guitars</h1> 
 
     <div class="filter-menu">
         <label class="filter-label" for="brand-filter">Filter by brand:</label>
@@ -52,50 +52,6 @@
         <div class="reset-button button" onclick="location.reload()"> Remove all filters </div>
     </div>
 </div>
-
-
-<script>
-    function filterGuitars() {
-        var brandFilter = document.getElementById("brand-filter").value;
-        var pickupFilter = document.getElementById("pickup-filter").value;
-        var shapeFilter = document.getElementById("shape-filter").value;
-    
-        var guitars = document.querySelectorAll(".guitar-preview");
-        var visibleGuitarCount = 0;
-    
-        guitars.forEach(function (guitar) {
-            var brand = guitar.getAttribute("data-brand");
-            var pickup = guitar.getAttribute("data-pickup");
-            var shape = guitar.getAttribute("data-shape");
-    
-            var matchesBrand = brandFilter === "" || brand === brandFilter;
-            var matchesPickup = pickupFilter === "" || pickup === pickupFilter;
-            var matchesShape = shapeFilter === "" || shape === shapeFilter;
-    
-            if (matchesBrand && matchesPickup && matchesShape) {
-                guitar.style.display = "block";
-                visibleGuitarCount++;
-            } else {
-                guitar.style.display = "none";
-            }
-        });
-    
-        notFound(visibleGuitarCount);
-    }
-    
-    function notFound(visibleCount) {
-        var notFound = document.querySelector(".not-found");
-        if (visibleCount === 0) {
-            notFound.style.display = "block";
-        } else {
-            notFound.style.display = "none";
-        }
-    }
-    function redirect(id) {
-        window.location.href = "/details/" + id;
-    }
-    
-</script>
     {% endblock %}
     {% block footer %}
 {% endblock %}

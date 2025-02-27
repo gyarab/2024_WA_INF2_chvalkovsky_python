@@ -8,21 +8,19 @@
     {% load static %}
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="{% static 'js/base.js' %}"></script>
 
     {% if page == 'homepage' %}
         <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+        <script src="{% static 'js/homepage.js' %}"></script>
     {% elif page == 'details' %}
         <link rel="stylesheet" href="{% static 'css/details.css' %}">
+        <script src="{% static 'js/details.js' %}"></script>
     {% endif %}
 </head>
 <body>
     <header> 
         <div class="admin-button button" onclick="admin()"> Admin </div>
-        <script>
-            function admin() {
-                window.location.href = "/admin";
-            }
-        </script>
         {% block header %}
         {% endblock %}
     </header>
