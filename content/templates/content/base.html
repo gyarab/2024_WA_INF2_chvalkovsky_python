@@ -19,10 +19,13 @@
     {% endif %}
 </head>
 <body>
-    <header> 
-        <div class="admin-button button" onclick="admin()"> Admin </div>
+    <header>
+        <div class="logo" onclick="home()" >
+            <h2> Guitars </h2>
+        </div>
         {% block header %}
         {% endblock %}
+        <div class="admin-button button" onclick="admin()"> Admin </div>
     </header>
     <main>
         {% block main %}
