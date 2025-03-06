@@ -11,8 +11,13 @@ header {
   margin: 0;
   margin-left: 2rem;
   cursor: pointer;
-  width: fit-content;
-  height: fit-content;
+  width: auto;
+  height: 7rem;
+}
+.logo img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
 }
 body {
   font-family: 'Inter', sans-serif;

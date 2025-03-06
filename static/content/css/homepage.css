@@ -107,15 +107,15 @@
   height: auto;
 }
 
-  .reset-button {
-    width: max-content;
-    padding: 12px 40px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto 0 auto;
-    cursor: pointer;
+.reset-button {
+  width: max-content;
+  padding: 12px 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0 auto;
+  cursor: pointer;
 }
 .guitar-price{
   width: 40%;

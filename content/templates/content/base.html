@@ -7,21 +7,21 @@
 
     {% load static %}
 
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <script src="{% static 'js/base.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'content/css/base.css' %}">
+    <script src="{% static 'content/js/base.js' %}"></script>
 
     {% if page == 'homepage' %}
-        <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
-        <script src="{% static 'js/homepage.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'content/css/homepage.css' %}">
+        <script src="{% static 'content/js/homepage.js' %}"></script>
     {% elif page == 'details' %}
-        <link rel="stylesheet" href="{% static 'css/details.css' %}">
-        <script src="{% static 'js/details.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'content/css/details.css' %}">
+        <script src="{% static 'content/js/details.js' %}"></script>
     {% endif %}
 </head>
 <body>
     <header>
         <div class="logo" onclick="home()" >
-            <h2> Guitars </h2>
+            <img src="{% static 'content/images/guitar-logo.jpg' %}" alt="logo">
         </div>
         {% block header %}
         {% endblock %}
