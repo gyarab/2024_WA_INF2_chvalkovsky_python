@@ -1,0 +1,47 @@
+[
+    {
+        "model": "content.brand",
+        "pk": 1,
+        "fields": {
+            "name": "Ibanez",
+            "origin": "Japan",
+            "info": "Ibanez is a Japanese guitar brand known for its innovative designs and high-performance instruments. It gained popularity in the 1970s and 1980s, especially among rock and metal guitarists. The brand is famous for models like the RG and S series, which offer fast necks and versatile pickups. Ibanez also produces high-quality basses and signature models for artists like Steve Vai and Joe Satriani. Their craftsmanship and affordability make them a favorite among beginners and professionals alike."
+        }
+    },
+    {
+        "model": "content.brand",
+        "pk": 2,
+        "fields": {
+            "name": "Fender",
+            "origin": "USA",
+            "info": "Fender is one of the most iconic American guitar manufacturers, founded by Leo Fender in 1946. The company revolutionized the music industry with legendary models like the Stratocaster and Telecaster. Fender guitars are known for their bright, crisp tones and are widely used in genres such as rock, blues, and country. Many famous musicians, including Jimi Hendrix and Eric Clapton, have played Fender guitars. The brand also produces top-quality amplifiers and bass guitars like the Precision and Jazz Bass."
+        }
+    },
+    {
+        "model": "content.brand",
+        "pk": 3,
+        "fields": {
+            "name": "PRS",
+            "origin": "USA",
+            "info": "PRS (Paul Reed Smith) is a high-end American guitar brand founded in 1985. Known for their stunning craftsmanship and versatility, PRS guitars are favored by professional musicians across various genres. Their signature models, like the Custom 24, feature high-quality tonewoods and unique bird inlays. PRS guitars offer a perfect balance between vintage warmth and modern playability. Many artists, such as Carlos Santana and Mark Tremonti, endorse PRS instruments."
+        }
+    },
+    {
+        "model": "content.brand",
+        "pk": 4,
+        "fields": {
+            "name": "Gibson",
+            "origin": "USA",
+            "info": "Gibson is a legendary American guitar brand, established in 1902, and is best known for the Les Paul and SG models. Their guitars are widely used in rock, blues, and jazz, with players like Slash and Jimmy Page favoring them. Gibson guitars are known for their rich, warm tones and exceptional build quality. The brand also produces the iconic ES-335 and Flying V models. Gibson continues to be a dominant force in the industry, maintaining its classic appeal while innovating new designs."
+        }
+    },
+    {
+        "model": "content.brand",
+        "pk": 5,
+        "fields": {
+            "name": "Jackson",
+            "origin": "USA",
+            "info": "Jackson is an American guitar brand, founded in the late 1970s, primarily associated with heavy metal and hard rock. The brand became famous for its aggressive body shapes, fast necks, and high-output pickups. Popular models like the Soloist and Rhoads are favored by shredders and metal guitarists worldwide. Jackson guitars have been played by artists such as Randy Rhoads and Marty Friedman. Their reputation for precision and speed makes them a top choice for modern metal musicians."
+        }
+    }
+]
