@@ -1,0 +1,30 @@
+[
+    {
+       "model": "content.genre",
+       "pk": 1,
+       "fields":{
+        "name": "Rock"
+       }
+    },
+    {
+        "model": "content.genre",
+        "pk": 2,
+        "fields":{
+         "name": "Metal"
+        }
+     },
+     {
+        "model": "content.genre",
+        "pk": 3,
+        "fields":{
+         "name": "Blues"
+        }
+     },
+     {
+        "model": "content.genre",
+        "pk": 4,
+        "fields":{
+         "name": "Country"
+        }
+     }
+]
