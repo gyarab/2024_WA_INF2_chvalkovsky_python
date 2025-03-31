@@ -14,7 +14,14 @@
     <div class="guitar-description">
         <h3> Shape: {{guitar.shape}} </h3>
         <h3> Pickups: {{guitar.pickups}} </h3>
-        <a href ><h3> Genre: {{genres}} </h3></a>
+        <div class="guitar-genres">
+            <h3>Genres:</h3>
+            {% for genre in guitar.genre.all %}
+            <div onclick="redirectToGenre({{ genre.id }})" style="cursor: pointer; display: inline-block; margin-right: 10px;">
+                <h3>{{ genre.name }}</h3>
+            </div>
+            {% endfor %}
+        </div>
         <div class="guitar-price">
             <p>{{guitar.price}},-</p>
         </div>
