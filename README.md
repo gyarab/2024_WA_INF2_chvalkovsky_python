@@ -39,9 +39,18 @@ Projekt obsahuje databázi elektrických kytar
     ```
 7. Load data from fixture
     ```sh
+    python manage.py loaddata brands.json
+    python manage.py loaddata genres.json
     python manage.py loaddata guitars.json
     ```
 8. Run the development server:
     ```sh
     python manage.py runserver
     ```
+# Features
+- Filter on the homepage by pickup configuration and shape.
+- Click on a guitar to see the details page.
+- Clicking on the logo in the header returns to the homepage.
+- On the details page, clicking on the guitar images enlarges the image.
+- On the details page, clicking on the guitar name in the header redirects to brand info and all the brand's guitars.
+- On the details page, clicking on the genre redirects to the genre page with all the guitars of the selected genre.

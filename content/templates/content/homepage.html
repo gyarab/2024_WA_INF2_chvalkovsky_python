@@ -3,14 +3,6 @@
 {% block header %}
 
     <div class="filter-menu">
-        <label class="filter-label" for="brand-filter">Filter by brand:</label>
-        <select class="filter" id="brand-filter" name="brand" onchange="filterGuitars(this.value)">
-            <option value="">All</option>
-            {% for brand in brands %}
-                <option value="{{ brand }}">{{ brand }}</option>
-            {% endfor %}
-        </select>
-
         <label class="filter-label" for="pickup-filter">Filter by pickup configuration:</label>
         <select class="filter" id="pickup-filter" name="pickup" onchange="filterGuitars(this.value)">
             <option value="">All</option>
@@ -35,7 +27,6 @@
     <div
     class="guitar-preview"
     onclick= "redirectToDetails({{ guitar.id }})" 
-    data-brand="{{ guitar.brand }}" 
     data-pickup="{{ guitar.pickups }}" 
     data-shape="{{ guitar.shape }}"
     >
