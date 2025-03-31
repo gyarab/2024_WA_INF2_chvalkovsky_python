@@ -1,26 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Guitar
-# import json
+from .models import Guitar, Genre, Brand
 
-"""
-# JSON Code
-def homepage(request):
-    with open('guitars.json', encoding='utf-8') as f:
-        guitars = json.load(f)
-
-
-    return render(request, 'content/homepage.html', {'guitars': guitars, 'page': 'homepage'})
-
-def details(request, id):
-    with open('guitars.json', encoding='utf-8') as f:
-        guitars = json.load(f)
-    
-    guitar = guitars[id]
-
-    return render(request, 'content/details.html', {'guitar' : guitar, 'page': 'details'})
-"""
-
-# Database Code
 def homepage(request):
     guitars = Guitar.objects.all()
     brands = Guitar.objects.values_list('brand', flat=True).distinct()
@@ -38,4 +18,26 @@ def homepage(request):
 
 def details(request, id):
     guitar = get_object_or_404(Guitar, id=id)
-    return render(request, 'content/details.html', {'guitar': guitar, 'page': 'details'})
+    genres = ", ".join(guitar.genre.values_list('name', flat=True))
+
+    return render(request, 'content/details.html',
+        {
+            'page': 'details',
+            'guitar': guitar,
+            'genres': genres,
+        })
+
+def genre(request, id):
+    genre = Genre.objects.get(pk=id)
+    return render(request, 'content/genre.html',
+        {
+            'page': 'genre',
+            'genre': genre,
+        })
+
+def brand(request, id):
+
+    return render(request, 'content/brand.html',
+        {
+            'page': 'brand',
+        })

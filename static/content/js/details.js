@@ -4,3 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
             this.classList.toggle("large");
         };
 });
+function redirectToBrand(id) {
+    window.location.href = "/brand/" + id;
+}
