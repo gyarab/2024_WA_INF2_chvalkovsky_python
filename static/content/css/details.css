@@ -68,3 +68,8 @@ a {
     margin: 0;
     height: inherit;
 }
+.guitar-genres h3 {
+    margin: 0;
+    display: inline;
+    margin-bottom: 0.5rem;
+}

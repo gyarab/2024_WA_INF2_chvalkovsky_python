@@ -11,6 +11,7 @@ class Brand(models.Model):
 
 class Genre(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False)
+    info = models.TextField(blank=False, null=False)
 
     def __str__(self):
         return self.name

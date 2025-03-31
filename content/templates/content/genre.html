@@ -5,6 +5,10 @@
 
 {% block main %}
 <div class="genrepage">
+    <div class="genre-description">
+        <h2>Information about the genre</h2>
+        <p> {{genre.info}}</p>
+    </div>
     {% for guitar in guitars %}
     <div
     class="guitar-preview"
