@@ -62,30 +62,6 @@
   transform: translateY(-50%);
   pointer-events: none;
 }
-
-.guitar-preview {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 3rem;
-  width: auto;
-  height: 40rem;
-}
-.guitar-preview:hover{
-  transform: scale(1.05);
-  cursor: pointer;
-}
-.guitar-preview img {
-  height: 80%;
-  scale: 0.7;
-  width: auto;
-  object-fit: cover;
-  border-radius: 10px;
-}
 .not-found {
   display: flex;
   flex-direction: column;
@@ -116,10 +92,4 @@
   align-items: center;
   margin: 20px auto 0 auto;
   cursor: pointer;
-}
-.guitar-price{
-  width: 40%;
-}
-.guitar-preview h2 {
-  margin-top: 0;
 }

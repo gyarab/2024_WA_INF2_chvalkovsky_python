@@ -19,10 +19,9 @@ def homepage(request):
 def details(request, id):
     #guitar = get_object_or_404(Guitar, id=id)
     #genres = guitar.genre.all()
-    
+
     guitar = Guitar.objects.prefetch_related('genre').get(pk=id)
     genre_ids = list(guitar.genre.values_list('id', flat=True))
-    genre_names = ", ".join(guitar.genre.values_list('name', flat=True))
     
     #print("Guitar:", guitar)
     #print(guitar.genre.all())
@@ -31,7 +30,6 @@ def details(request, id):
             'page': 'details',
             'guitar': guitar,
             'genre_ids': genre_ids,
-            'genre_names': genre_names,
         })
 
 def genre(request, id):
@@ -43,8 +41,9 @@ def genre(request, id):
         })
 
 def brand(request, id):
-
+    brand = Brand.objects.get(pk=id)
     return render(request, 'content/brand.html',
         {
             'page': 'brand',
+            'brand': brand,
         })

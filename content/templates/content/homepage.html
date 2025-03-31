@@ -34,7 +34,7 @@
     {% for guitar in guitars %}
     <div
     class="guitar-preview"
-    onclick= "redirect({{ guitar.id }})" 
+    onclick= "redirectToDetails({{ guitar.id }})" 
     data-brand="{{ guitar.brand }}" 
     data-pickup="{{ guitar.pickups }}" 
     data-shape="{{ guitar.shape }}"

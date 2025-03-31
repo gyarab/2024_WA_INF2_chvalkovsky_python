@@ -59,3 +59,8 @@ footer {
 a {
     text-decoration: inherit;
 }
+.guitar-genres {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
