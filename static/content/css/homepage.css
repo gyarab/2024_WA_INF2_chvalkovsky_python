@@ -7,7 +7,6 @@
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /*grid-template-rows: repeat(5, auto);*/
   grid-gap: 3rem;
 }
 .filter-menu {

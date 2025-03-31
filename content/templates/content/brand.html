@@ -1,9 +1,15 @@
 {% extends "content/base.html" %}
 {% block header %}
-<h1> All {{brand.name}} guitars </h1>
+<h1>{{brand.name}}</h1>
 {% endblock %}
 {% block main %}
 <div class="brandpage">
+    <div class="brand-description">
+        <h2>Information about the brand</h2>
+        <p>Country of origin: {{brand.origin}}</p>
+        <p> {{brand.info}}</p>
+        
+    </div>
     {% for guitar in brand.guitar_set.all %}
     <div
     class="guitar-preview"
@@ -17,4 +23,6 @@
     </div>
     {% endfor %}
 </div>
+{% endblock %}
+{% block footer %}
 {% endblock %}

@@ -33,12 +33,14 @@ def details(request, id):
         })
 
 def genre(request, id):
-    genre = Genre.objects.get(pk=id)
-    return render(request, 'content/genre.html',
-        {
-            'page': 'genre',
-            'genre': genre,
-        })
+    genre = get_object_or_404(Genre, pk=id)  # Ensures 404 if genre doesn't exist
+    guitars = Guitar.objects.filter(genre=genre)  # Proper filtering
+
+    return render(request, 'content/genre.html', {
+        'page': 'genre',
+        'genre': genre,
+        'guitars': guitars,
+    })
 
 def brand(request, id):
     brand = Brand.objects.get(pk=id)

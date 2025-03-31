@@ -38,6 +38,9 @@ img {
 .guitar-description {
     height: auto;
 }
+.genre-name{
+    margin-left: 0.75rem;
+}
 .guitar-image.large {
     position: fixed;
     top: 50%;
@@ -63,4 +66,5 @@ a {
     display: flex;
     flex-direction: row;
     margin: 0;
+    height: inherit;
 }

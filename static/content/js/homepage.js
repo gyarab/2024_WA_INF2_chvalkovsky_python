@@ -34,6 +34,3 @@ function notFound(visibleCount) {
         notFound.style.display = "none";
     }
 }
-function redirect(id) {
-    window.location.href = "/details/" + id;
-}

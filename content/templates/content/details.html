@@ -17,7 +17,7 @@
         <div class="guitar-genres">
             <h3>Genres:</h3>
             {% for genre in guitar.genre.all %}
-            <div onclick="redirectToGenre({{ genre.id }})" style="cursor: pointer; display: inline-block; margin-right: 10px;">
+            <div class="genre-name" onclick="redirectToGenre({{ genre.id }})" style="cursor: pointer; display: inline-block; margin-right: 10px;">
                 <h3>{{ genre.name }}</h3>
             </div>
             {% endfor %}

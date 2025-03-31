@@ -1,3 +1,24 @@
 {% extends "content/base.html" %}
 {% block header %}
+<h1> All {{genre.name}} guitars </h1>
+{% endblock %}
+
+{% block main %}
+<div class="genrepage">
+    {% for guitar in guitars %}
+    <div
+    class="guitar-preview"
+    onclick= "redirectToDetails({{ guitar.id }})" 
+    >
+        <h2>{{ guitar.brand }} {{ guitar.model }}</h2>
+        <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
+        <div class="guitar-price">
+            <p>{{ guitar.price }},-</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+{% block footer %}
 {% endblock %}
