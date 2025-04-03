@@ -10,16 +10,16 @@
         <p> {{brand.info}}</p>
     </div>
     {% for guitar in brand.guitar_set.all %}
-    <div
-    class="guitar-preview"
-    onclick= "redirectToDetails({{ guitar.id }})" 
+    <a
+    href="/details/{{ guitar.id }}"
+    class="guitar-preview" 
     >
         <h2>{{ guitar.brand }} {{ guitar.model }}</h2>
         <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
         <div class="guitar-price">
             <p>{{ guitar.price }},-</p>
         </div>
-    </div>
+    </a>
     {% endfor %}
 </div>
 {% endblock %}

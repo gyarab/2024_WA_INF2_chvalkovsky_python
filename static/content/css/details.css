@@ -40,6 +40,8 @@ img {
 }
 .genre-name{
     margin-left: 0.75rem;
+    display: inline-block;
+    margin-right: 10px;
 }
 .guitar-image.large {
     position: fixed;

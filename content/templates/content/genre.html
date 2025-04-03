@@ -10,16 +10,16 @@
         <p> {{genre.info}}</p>
     </div>
     {% for guitar in guitars %}
-    <div
+    <a
+    href="/details/{{ guitar.id }}"
     class="guitar-preview"
-    onclick= "redirectToDetails({{ guitar.id }})" 
     >
         <h2>{{ guitar.brand }} {{ guitar.model }}</h2>
         <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
         <div class="guitar-price">
             <p>{{ guitar.price }},-</p>
         </div>
-    </div>
+    </a>
     {% endfor %}
 </div>
 

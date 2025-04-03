@@ -27,12 +27,12 @@
 </head>
 <body>
     <header>
-        <div class="logo" onclick="home()" >
+        <a class="logo" href="/">
             <img src="{% static 'content/images/guitar-logo.jpg' %}" alt="logo">
-        </div>
+        </a>
         {% block header %}
         {% endblock %}
-        <div class="admin-button button" onclick="admin()"> Admin </div>
+        <a class="admin-button button" href="/admin/"> Admin </a>
     </header>
     <main>
         {% block main %}

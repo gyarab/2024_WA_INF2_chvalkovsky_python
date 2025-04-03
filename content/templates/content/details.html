@@ -1,9 +1,9 @@
 {% extends "content/base.html" %}
 
 {% block header %}
-    <div onclick="redirectToBrand({{ guitar.brand.id }})" style="cursor: pointer;">
-    <h1> {{guitar.brand}} {{guitar.model}}</h1></a>
-    </div>
+    <a href="/brand/{{ guitar.brand.id }}">
+        <h1> {{guitar.brand}} {{guitar.model}}</h1></a>
+    </a>
 {% endblock %}
 
 {% block main %}
@@ -17,9 +17,12 @@
         <div class="guitar-genres">
             <h3>Genres:</h3>
             {% for genre in guitar.genre.all %}
-            <div class="genre-name" onclick="redirectToGenre({{ genre.id }})" style="cursor: pointer; display: inline-block; margin-right: 10px;">
+            <a 
+                href="/genre/{{ genre.id }}"
+                class="genre-name"
+            >
                 <h3>{{ genre.name }}</h3>
-            </div>
+            </a>
             {% endfor %}
         </div>
         <div class="guitar-price">

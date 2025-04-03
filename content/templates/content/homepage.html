@@ -23,20 +23,21 @@
 {% endblock %}
 {% block main %}
 <div class="homepage">
-    {% for guitar in guitars %}
-    <div
-    class="guitar-preview"
-    onclick= "redirectToDetails({{ guitar.id }})" 
-    data-pickup="{{ guitar.pickups }}" 
-    data-shape="{{ guitar.shape }}"
+{% for guitar in guitars %}
+    <a 
+        href="/details/{{ guitar.id }}" 
+        class="guitar-preview" 
+        data-pickup="{{ guitar.pickups }}" 
+        data-shape="{{ guitar.shape }}"
     >
-        <h2>{{ guitar.brand }} {{ guitar.model }}</h2>
-        <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
-        <div class="guitar-price">
-            <p>{{ guitar.price }},-</p>
-        </div>
+    <h2>{{ guitar.brand }} {{ guitar.model }}</h2>
+    <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
+    <div class="guitar-price">
+        <p>{{ guitar.price }},-</p>
     </div>
-    {% endfor %}
+</a>
+{% endfor %}
+
     <div class="not-found" style="display: none;">
         <h2>No guitars found</h2>
         <div class="reset-button button" onclick="location.reload()"> Remove all filters </div>

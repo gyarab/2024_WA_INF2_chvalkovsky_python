@@ -4,10 +4,3 @@ document.addEventListener("DOMContentLoaded", function() {
             this.classList.toggle("large");
         };
 });
-function redirectToBrand(id) {
-    window.location.href = "/brand/" + id;
-}
-function redirectToGenre(id) {
-    console.log("genre id" + id);
-    window.location.href = "/genre/" + id;
-}
