@@ -24,9 +24,9 @@ SECRET_KEY = 'django-insecure-sum847_19@byt3-xn&860a!5995@n=xr4h5-265up8bq#6x-r&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # When 'False' static files will not be loaded
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['guitars.svs.gyarab.cz']
+ALLOWED_HOSTS = ['guitars.svs.gyarab.cz', 'localhost', '127.0.0.1']
 
 
 # Application definition
