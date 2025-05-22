@@ -1,77 +1,98 @@
 .details {
-    justify-content: center;
-    align-items: start;
-  
-    margin: 0 auto;
-    padding: 20px;
-  
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 5rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 45%, 600px), 1fr));
+	gap: 3rem;
+	padding: 2rem 5%;
+	margin: 0 auto;
+	width: 100%;
+	box-sizing: border-box;
+	align-items: start;
+}
 
-    height: auto;
+@media (aspect-ratio: 1/1),
+(max-aspect-ratio: 1/1) {
+	.details {
+		grid-template-columns: 1fr;
+		grid-auto-rows: auto;
+	}
 }
+
 .guitar-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    padding: 3rem;
-    width: 90%;
-    height: 40rem;
-    cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	padding: 3rem;
+	width: 100%;
+	height: max(60vw, 40vh);
+	cursor: pointer;
 }
-h3 {
-    font-size: 1.5rem;
-}
+
 .description {
-    color: darkslategray;
-    font-size: larger;
+	color: darkslategray;
+	font-size: clamp(0.5rem, 3vw, 1.25rem);
 }
+
 img {
-    height : 100%;
-    width: auto;
-    object-fit: cover;
+	height: 100%;
+	width: auto;
+	object-fit: cover;
 }
+
 .guitar-description {
-    height: auto;
+	display: inline-block;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	height: auto;
+	width: 100%;
+	box-sizing: border-box;
 }
-.genre-name{
-    margin-left: 0.75rem;
-    display: inline-block;
-    margin-right: 10px;
+
+.guitar-description h3 {
+	text-align: left;
 }
-.guitar-image.large {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.01);
-    z-index: 1000;
-    width: 80%;
-    height: 90%;
-    background-color: white;
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+.genre-name {
+	display: inline-block;
+	margin-left: 0.75vw;
 }
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-a {
-    text-decoration: inherit;
-}
+
 .guitar-genres {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    height: inherit;
+	display: flex;
+	margin: 0;
+	height: inherit;
+	width: 10%;
 }
+
 .guitar-genres h3 {
-    margin: 0;
-    display: inline;
-    margin-bottom: 0.5rem;
+	margin: 0;
+	display: inline;
+	margin-bottom: 0.5rem;
+}
+
+.guitar-image.large {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.01);
+	z-index: 1000;
+	width: 80%;
+	height: 90%;
+	background-color: white;
+	padding: 3rem;
+	border-radius: 20px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+a {
+	text-decoration: inherit;
 }

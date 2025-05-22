@@ -2,23 +2,26 @@
 
 {% block header %}
 
-    <div class="filter-menu">
-        <label class="filter-label" for="pickup-filter">Filter by pickup configuration:</label>
+{% comment %}     <div class="filter-menu"> {% endcomment %}
+<div class="filter-menu">
+        <label class="filter-label" for="pickup-filter"><h2>Filter by pickups:</h2></label>
         <select class="filter" id="pickup-filter" name="pickup" onchange="filterGuitars(this.value)">
             <option value="">All</option>
             {% for pickup in pickups %}
                 <option value="{{ pickup }}">{{ pickup }}</option>
             {% endfor %}
         </select>
-
-        <label class="filter-label" for="shape-filter" >Filter by shape:</label>
+</div>
+<div class="filter-menu">
+        <label class="filter-label" for="shape-filter" ><h2>Filter by shape:</h2></label>
         <select class="filter" id="shape-filter" name="shape" onchange="filterGuitars(this.value)">
             <option value="">All</option>
             {% for shape in shapes %}
                 <option value="{{ shape }}">{{ shape }}</option>
             {% endfor %}
         </select>
-    </div>
+</div>
+{% comment %}     </div> {% endcomment %}
 
 {% endblock %}
 {% block main %}
@@ -31,11 +34,13 @@
         data-shape="{{ guitar.shape }}"
     >
     <h2>{{ guitar.brand }} {{ guitar.model }}</h2>
-    <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
-    <div class="guitar-price">
-        <p>{{ guitar.price }},-</p>
+    <div class="img-price">
+        <img src="{{ guitar.image }}" alt="{{ guitar.model }}">
+        <div class="guitar-price">
+            <p>{{ guitar.price }},-</p>
+        </div>
     </div>
-</a>
+    </a>
 {% endfor %}
 
     <div class="not-found" style="display: none;">

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Guitars{% endblock %}</title>
     <script src="https://klikz.svs.gyarab.cz/hit/27?size=small" defer></script>
-
     {% load static %}
 
     <link rel="stylesheet" href="{% static 'content/css/base.css' %}">
@@ -33,7 +32,6 @@
         </a>
         {% block header %}
         {% endblock %}
-        <a class="admin-button button" href="/admin/"> Admin </a>
     </header>
     <main>
         {% block main %}

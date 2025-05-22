@@ -1,94 +1,69 @@
 .homepage {
-  justify-content: center;
-  align-items: center;
-
-  margin: 0 auto;
-  padding: 20px;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 3rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 45%, 300px), 1fr));
+	gap: 2rem;
+	padding: 1rem 3%;
+	width: 100%;
+	margin: 0 auto;
 }
+
 .filter-menu {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-  grid-auto-flow: column;
-  gap: 5px;
-  row-gap: 10px;
-  justify-content: center;
-  margin: 20px auto;
-  margin-top: 0;
-  padding: 20px;
-  max-width: 800px;
-  position: relative;
+	display: block;
+	justify-content: center;
+	text-align: center;
+	height: auto;
+	width: 20vw;
 }
 
 .filter-label {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0;
-  color: black;
+	font-size: clamp(0.5rem, 2vw, 1rem);
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5rem;
 }
 
 .filter {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: white;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	width: 70%;
+	padding: 10px;
+	font-size: clamp(0.1rem, 2vw, 1rem);
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	background-color: white;
+	text-align: center;
+	appearance: none;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .filter:hover,
 .filter:focus {
-  border-color: black;
-  outline: none;
-  background-color: #f8f9fa;
-  cursor: pointer;
+	border-color: black;
+	background-color: #f8f9fa;
+	cursor: pointer;
+	outline: none;
 }
-.filter::after {
-  content: "▼";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
+
 .not-found {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 3rem;
-  width: 40%;
-  height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 2rem auto;
+	padding: 2rem;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	max-width: 500px;
+	width: 90%;
 }
 
 .reset-button {
-  width: max-content;
-  padding: 12px 40px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto 0 auto;
-  cursor: pointer;
+	padding: 12px 40px;
+	background-color: #eee;
+	border-radius: 6px;
+	cursor: pointer;
+	margin-top: 1.5rem;
+	text-align: center;
+	width: 100%;
+	max-width: 300px;
 }
