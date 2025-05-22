@@ -1,6 +1,7 @@
 # 2024_WA_INF2_chvalkovsky_python
 # Info
 Django cms repozitář
+Currently running at [guitars.svs.gyarab.cz](https://guitars.svs.gyarab.cz/)
 # Autor
 brunochvalk
 # Obsah
