@@ -21,6 +21,7 @@ header {
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 	padding: 2vh 3vw;
 	flex-wrap: wrap;
+  white-space: nowrap;
 }
 
 .logo {
@@ -144,8 +145,15 @@ h3 {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
 	text-align: center;
-	margin: 1rem;
+	margin: 1vw;
+  text-decoration: underline;
+  color: rgb(0, 157, 255);
+}
+.source {
+  margin: 0.5rem
 }
 
 a {

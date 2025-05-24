@@ -9,21 +9,22 @@
 
 .filter-menu {
 	display: block;
+  align-items: center;
 	justify-content: center;
 	text-align: center;
 	height: auto;
-	width: 20vw;
+	width: fit-content;
 }
 
 .filter-label {
-	font-size: clamp(0.5rem, 2vw, 1rem);
+	font-size: clamp(0.25rem, 2vw, 1rem);
 	font-weight: bold;
 	display: block;
 	margin-bottom: 0.5rem;
 }
 
 .filter {
-	width: 70%;
+	width: 100%;
 	padding: 10px;
 	font-size: clamp(0.1rem, 2vw, 1rem);
 	border: 1px solid #ccc;
