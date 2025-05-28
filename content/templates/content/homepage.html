@@ -5,7 +5,7 @@
 {% comment %}     <div class="filter-menu"> {% endcomment %}
 <div class="filter-menu">
         <label class="filter-label" for="pickup-filter"><h2>Filter by pickups:</h2></label>
-        <select class="filter" id="pickup-filter" name="pickup" onchange="filterGuitars(this.value)">
+        <select class="filter" id="pickup-filter" name="pickup" onchange="filterGuitars(this.value) ">
             <option value="">All</option>
             {% for pickup in pickups %}
                 <option value="{{ pickup }}">{{ pickup }}</option>
@@ -45,7 +45,9 @@
 
     <div class="not-found" style="display: none;">
         <h2>No guitars found</h2>
-        <div class="reset-button button" onclick="location.reload()"> Remove all filters </div>
+        <div class="reset-button button" 
+            onclick="resetFilters(); location.reload()"
+        > Remove all filters </div>
     </div>
 </div>
 {% endblock %}

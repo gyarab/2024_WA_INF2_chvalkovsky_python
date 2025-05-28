@@ -31,3 +31,9 @@ function notFound(visibleCount) {
         notFound.style.display = "none";
     }
 }
+function resetFilters() {
+    document.querySelectorAll('.filter').forEach(function(filter) {
+        filter.value = "All";
+    });
+    filterGuitars();
+}

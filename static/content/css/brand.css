@@ -25,6 +25,7 @@
 	font-size: clamp(0.5rem, 3vw, 1.25rem);
 	display: -webkit-box;
 	-webkit-line-clamp: 10;
+      line-clamp: 10;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
